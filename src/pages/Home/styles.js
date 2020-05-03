@@ -136,7 +136,7 @@ export const AboutTitle = styled.h1`
   margin: 30px 0 80px 0;
 
   ${MEDIA} {
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 30px;
   }
 `;
@@ -168,7 +168,7 @@ export const Avatar = styled.img`
   width: 200px;
 
   ${MEDIA} {
-    width: 50%;
+    width: 40%;
   }
 `;
 
@@ -178,13 +178,14 @@ export const Name = styled.p`
   color: #ff6600;
 
   ${MEDIA} {
-    font-size: 22px;
+    font-size: 20px;
   }
 `;
 
 export const PersonDescription = styled.p`
   ${MEDIA} {
-    width: 90%;
+    width: 70%;
+    font-size: 14px;
   }
 `;
 
