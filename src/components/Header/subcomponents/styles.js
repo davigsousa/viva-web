@@ -51,7 +51,7 @@ export const SmallMenu = styled.button`
   background: none;
   border: none;
   width: 60px;
-  margin-right: 40px;
+  margin-right: 25px;
   cursor: pointer;
 `;
 
@@ -67,7 +67,7 @@ export const MenuSlide = styled.aside`
   position: fixed;
   top: 90px;
   left: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;

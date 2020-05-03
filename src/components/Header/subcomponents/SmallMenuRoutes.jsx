@@ -17,8 +17,7 @@ const SmallMenuRoutes = ({
                 links.map((link) => (
                   <MenuSlideItem
                     key={link.name}
-                    to={link.to}
-                    onClick={() => onClick(link.to)}
+                    href={link.to}
                   >
                     {link.name}
                   </MenuSlideItem>
@@ -26,8 +25,7 @@ const SmallMenuRoutes = ({
               }
               { actionButton && (
                 <MenuSlideItem
-                  to={actionButton.to}
-                  onClick={() => onClick(actionButton.to)}
+                  href={actionButton.to}
                 >
                   {actionButton.name}
                 </MenuSlideItem>

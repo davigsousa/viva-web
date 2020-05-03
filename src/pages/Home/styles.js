@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import vendaonline from '../../assets/vendaonline.jpg';
 
+const MEDIA = '@media only screen and (max-width: 768px)';
+
 export const Container = styled.div`
   margin-top: 100px;
   width: 100%;
@@ -15,6 +17,10 @@ export const VendaOnline = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${MEDIA} {
+    height: 400px;
+  }
 `;
 
 export const VendaContainer = styled.div`
@@ -22,12 +28,20 @@ export const VendaContainer = styled.div`
   flex-direction: column;
   text-align: center;
   width: 1000px;
+
+  ${MEDIA} {
+    width: 100%;
+  }
 `;
 
 export const VendaTitle = styled.h1`
   font-size: 120px;
   color: white;
   text-shadow: -1px 0px 14px rgba(0, 0, 0, 1);
+
+  ${MEDIA} {
+    font-size: 40px;
+  }
 `;
 
 export const VendaDescription = styled.p`
@@ -35,11 +49,27 @@ export const VendaDescription = styled.p`
   color: white;
   font-weight: bold;
   text-shadow: -1px 0px 14px rgba(0, 0, 0, 1);
+
+  ${MEDIA} {
+    font-size: 25px;
+  }
 `;
 
 export const VendaApp = styled.div`
   display: flex;
   padding: 100px;
+
+  ${MEDIA} {
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+    margin-top: 80px;
+    flex-direction: column-reverse;
+
+    &:nth-child(3) {
+      flex-direction: column;
+    }
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -51,6 +81,12 @@ export const ImageContainer = styled.div`
   img {
     max-width: 600px;
   }
+
+  ${MEDIA} {
+    img {
+      max-width: 100%;
+    }
+  }
 `;
 
 export const AppInfo = styled.div`
@@ -60,15 +96,27 @@ export const AppInfo = styled.div`
   justify-content: center;
   flex-direction: column;
   text-align: center;
+
+  ${MEDIA} {
+    margin-top: 20px;
+  }
 `;
 
 export const AppTitle = styled.p`
   font-size: 60px;
   color: #ff6600;
+
+  ${MEDIA} {
+    font-size: 30px;
+  }
 `;
 
 export const AppDescription = styled.p`
   font-size: 30px;
+
+  ${MEDIA} {
+    font-size: 16px;
+  }
 `;
 
 export const AboutContainer = styled.div`
@@ -76,17 +124,30 @@ export const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${MEDIA} {
+    margin-top: 100px;
+  }
 `;
 
 export const AboutTitle = styled.h1`
   font-size: 90px;
   color: #993366;
   margin: 30px 0 80px 0;
+
+  ${MEDIA} {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
 `;
 
 export const AboutGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  ${MEDIA} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const PersonContainer = styled.div`
@@ -96,19 +157,36 @@ export const PersonContainer = styled.div`
   text-align: center;
   width: 300px;
   margin: 0 10px;
+
+  ${MEDIA} {
+    width: 100%;
+    margin: 0 0 50px 0;
+  }
 `;
 
 export const Avatar = styled.img`
   width: 200px;
+
+  ${MEDIA} {
+    width: 50%;
+  }
 `;
 
 export const Name = styled.p`
   font-size: 30px;
   font-weight: bold;
   color: #ff6600;
+
+  ${MEDIA} {
+    font-size: 22px;
+  }
 `;
 
-export const PersonDescription = styled.p``;
+export const PersonDescription = styled.p`
+  ${MEDIA} {
+    width: 90%;
+  }
+`;
 
 export const SloganContainer = styled.div`
   display: flex;
@@ -117,11 +195,21 @@ export const SloganContainer = styled.div`
   width: 100%;
   height: 300px;
   margin-top: 40px;
+
+  ${MEDIA} {
+    height: 100px;
+    margin-bottom: 60px;
+  }
 `;
 
 export const SloganTitle = styled.h1`
   font-size: 60px;
   color: #993366;
+
+  ${MEDIA} {
+    font-size: 30px;
+    text-align: center;
+  }
 `;
 
 export const ContactContainer = styled.div`
@@ -141,17 +229,29 @@ export const FormContainer = styled.form`
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
+
+  ${MEDIA} {
+    width: 100%;
+  }
 `;
 
 export const FormTitle = styled.h1`
   color: white;
   font-size: 120px;
+
+  ${MEDIA} {
+    font-size: 45px;
+  }
 `;
 
 export const FormDescription = styled.p`
   color: white;
   font-size: 30px;
   margin-bottom: 50px;
+
+  ${MEDIA} {
+    font-size: 25px;
+  }
 `;
 
 export const Input = styled.input`
@@ -161,7 +261,12 @@ export const Input = styled.input`
   border-radius: 25px;
   border: none;
   padding: 0 30px;
-  font-size: 20px;  
+  font-size: 20px;
+
+  ${MEDIA} {
+    width: 90%;
+    font-size: 16px;
+  }
 `;
 
 export const TextArea = styled.textarea`
@@ -170,6 +275,11 @@ export const TextArea = styled.textarea`
   padding: 5px 30px;
   font-size: 20px;
   border-radius: 25px;
+
+  ${MEDIA} {
+    width: 90%;
+    font-size: 16px;
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -178,6 +288,10 @@ export const ButtonContainer = styled.div`
   flex: 1;
   align-items: center;
   justify-content: flex-end;
+
+  ${MEDIA} {
+    padding-right: 20px;
+  }
 `;
 
 export const SubmitButton = styled.button`
