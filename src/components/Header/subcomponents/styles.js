@@ -7,7 +7,7 @@ export const MenuNormal = styled.menu`
   align-items: center;
 `;
 
-export const MenuNormalItem = styled(Link)`
+export const MenuNormalItem = styled.a`
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
@@ -24,7 +24,7 @@ export const MenuNormalItem = styled(Link)`
   }
 `;
 
-export const ActionButton = styled(Link)`
+export const ActionButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +76,7 @@ export const MenuSlide = styled.aside`
   border-top: solid 1vh #cc3300;
 `;
 
-export const MenuSlideItem = styled(Link)`
+export const MenuSlideItem = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;

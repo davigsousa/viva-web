@@ -56,8 +56,7 @@ function Menu({
                 links.map((link) => (
                   <MenuNormalItem
                     key={link.name}
-                    to={link.to}
-                    onClick={() => handleRouteClick(link.to)}
+                    href={link.to}
                   >
                     {link.name}
                   </MenuNormalItem>
@@ -67,8 +66,7 @@ function Menu({
                 actionButton
                   ? (
                     <ActionButton
-                      to={actionButton.to}
-                      onClick={() => handleRouteClick(actionButton.to)}
+                      href={actionButton.to}
                     >
                       {actionButton.name}
                       <img src={download} alt="download" />

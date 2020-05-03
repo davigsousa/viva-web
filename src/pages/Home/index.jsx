@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
 import {
   Container, VendaOnline, VendaTitle, VendaContainer, VendaDescription,
@@ -18,12 +19,17 @@ import davi from '../../assets/davi.png';
 import henrique from '../../assets/henrique.png';
 import matheus from '../../assets/matheus.png';
 
+
+configureAnchors({ offset: -170 });
+
 function Home() {
   return (
     <Container>
       <VendaOnline>
         <VendaContainer>
-          <VendaTitle>Venda Online Já!</VendaTitle>
+          <ScrollableAnchor id="inicio">
+            <VendaTitle>Venda Online Já!</VendaTitle>
+          </ScrollableAnchor>
           <VendaDescription>
             Baixe nosso APP e adquira algum
             pacote de serviços. Simples, prático e rápido.
@@ -83,7 +89,9 @@ function Home() {
       </VendaApp>
 
       <AboutContainer>
-        <AboutTitle>Quem Somos?</AboutTitle>
+        <ScrollableAnchor id="sobre">
+          <AboutTitle>Quem Somos?</AboutTitle>
+        </ScrollableAnchor>
         <AboutGrid>
           <PersonContainer>
             <Avatar src={arthur} alt="Integrante" />
@@ -129,7 +137,9 @@ function Home() {
 
       <ContactContainer>
         <FormContainer>
-          <FormTitle>Contate-nos</FormTitle>
+          <ScrollableAnchor id="contato">
+            <FormTitle>Contate-nos</FormTitle>
+          </ScrollableAnchor>
           <FormDescription>Envie-nos um Email e retornaremos contato</FormDescription>
           <Input placeholder="Email" />
           <Input placeholder="Assunto" />

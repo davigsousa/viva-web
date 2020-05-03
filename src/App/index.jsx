@@ -11,7 +11,7 @@ const App = ({ children }) => (
     <Header
       logo={logo}
       links={[
-        { name: 'Início', to: '/#' },
+        { name: 'Início', to: '/#inicio' },
         { name: 'Quem Somos?', to: '/#sobre' },
         { name: 'Contato', to: '/#contato' },
       ]}
