@@ -23,10 +23,6 @@ function Menu({
     setClicked(!clicked);
   };
 
-  const handleRouteClick = (route) => {
-    if (!route.includes('#')) window.scroll(0, 0);
-  };
-
   const bar1 = { transform: 'rotate(-45deg) translate(-9px, 6px)' };
   const bar2 = { opacity: 0 };
   const bar3 = { transform: 'rotate(45deg) translate(-8px, -8px)' };
@@ -46,7 +42,6 @@ function Menu({
                 links={links}
                 actionButton={actionButton}
                 clicked={clicked}
-                onClick={handleRouteClick}
               />
             </>
           )

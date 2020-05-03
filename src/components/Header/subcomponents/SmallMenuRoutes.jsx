@@ -6,7 +6,7 @@ import {
 } from './styles';
 
 const SmallMenuRoutes = ({
-  clicked, links, actionButton, onClick,
+  clicked, links, actionButton,
 }) => (
   <>
     {
@@ -46,7 +46,6 @@ SmallMenuRoutes.propTypes = {
     to: PropTypes.string.isRequired,
   }),
   clicked: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
 };
 
 SmallMenuRoutes.defaultProps = {
