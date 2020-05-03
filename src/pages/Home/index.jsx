@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
 import {
@@ -19,9 +19,38 @@ import henrique from '../../assets/henrique.png';
 import matheus from '../../assets/matheus.png';
 
 
-configureAnchors({ offset: -170 });
+configureAnchors({ offset: -130 });
 
 function Home() {
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  const sendFeedback = (templateId, variables) => {
+    window.emailjs.send(
+      'gmail', templateId,
+      variables,
+    );
+  };
+
+  const handleSubmit = () => {
+    const templateId = 'contato_web';
+
+    sendFeedback(
+      templateId,
+      {
+        messagem: message,
+        assunto: subject,
+        email,
+      },
+    );
+
+    setEmail('');
+    setSubject('');
+    setMessage('');
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Container>
       <VendaOnline>
@@ -140,11 +169,27 @@ function Home() {
             <FormTitle>Contate-nos</FormTitle>
           </ScrollableAnchor>
           <FormDescription>Envie-nos um Email e retornaremos contato</FormDescription>
-          <Input placeholder="Email" />
-          <Input placeholder="Assunto" />
-          <TextArea placeholder="Digite sua mensagem aqui..." />
+          <Input
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            type="email"
+            required
+          />
+          <Input
+            placeholder="Assunto"
+            onChange={(e) => setSubject(e.target.value)}
+            value={subject}
+            required
+          />
+          <TextArea
+            placeholder="Digite sua mensagem aqui..."
+            onChange={(e) => setMessage(e.target.value)}
+            value={message}
+            required
+          />
           <ButtonContainer>
-            <SubmitButton>Enviar</SubmitButton>
+            <SubmitButton type="button" onClick={handleSubmit}>Enviar</SubmitButton>
           </ButtonContainer>
         </FormContainer>
       </ContactContainer>

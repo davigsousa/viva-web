@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 const MEDIA = '@media only screen and (max-width: 768px)';
 
