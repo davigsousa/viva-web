@@ -226,6 +226,10 @@ export const ContactContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${MEDIA} {
+    height: 700px;
+  }
 `;
 
 export const FormContainer = styled.form`
@@ -247,7 +251,7 @@ export const FormTitle = styled.h1`
   font-size: 120px;
 
   ${MEDIA} {
-    font-size: 45px;
+    font-size: 35px;
   }
 `;
 
@@ -257,7 +261,7 @@ export const FormDescription = styled.p`
   margin-bottom: 50px;
 
   ${MEDIA} {
-    font-size: 25px;
+    font-size: 16px;
   }
 `;
 
