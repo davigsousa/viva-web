@@ -22,7 +22,7 @@ export const LogoSpace = styled(Link)`
   margin-right: auto;
 
   img {
-    max-width: 100px;
+    max-width: 140px;
   }
 `;
 

@@ -9,8 +9,10 @@ import {
 
 import SmallMenuRoutes from './SmallMenuRoutes';
 
+import download from '../../../assets/download.png';
+
 function Menu({
-  links, actionButton, forwardRef, useSmall, color,
+  links, actionButton, forwardRef, useSmall,
 }) {
   const [clicked, setClicked] = useState(false);
 
@@ -69,6 +71,7 @@ function Menu({
                       onClick={() => handleRouteClick(actionButton.to)}
                     >
                       {actionButton.name}
+                      <img src={download} alt="download" />
                     </ActionButton>
                   )
                   : ''

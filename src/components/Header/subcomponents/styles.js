@@ -18,6 +18,7 @@ export const MenuNormalItem = styled(Link)`
   justify-content: center;
   height: 100%;
   margin-right: 3vw;
+  
   &:hover {
     color: #ccc;
   }
@@ -36,6 +37,11 @@ export const ActionButton = styled(Link)`
   background-color: #ff6600;
   padding: 20px 40px;
   border-radius: 70px;
+
+  img {
+    margin-left: 20px;
+    width: 25px;
+  }
 
   &:hover {
     filter: brightness(70%);
