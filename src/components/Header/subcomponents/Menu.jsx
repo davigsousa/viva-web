@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import {
@@ -15,9 +14,6 @@ function Menu({
   links, actionButton, forwardRef, useSmall,
 }) {
   const [clicked, setClicked] = useState(false);
-
-  const history = useHistory();
-  history.listen(() => setClicked(!clicked));
 
   const handleMenu = () => {
     setClicked(!clicked);
@@ -47,6 +43,7 @@ function Menu({
                 links={links}
                 actionButton={actionButton}
                 clicked={clicked}
+                onPress={handleMenu}
               />
             </>
           )

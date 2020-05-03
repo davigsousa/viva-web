@@ -6,7 +6,7 @@ import {
 } from './styles';
 
 const SmallMenuRoutes = ({
-  clicked, links, actionButton,
+  clicked, links, actionButton, onPress,
 }) => (
   <>
     {
@@ -18,6 +18,7 @@ const SmallMenuRoutes = ({
                   <MenuSlideItem
                     key={link.name}
                     href={link.to}
+                    onClick={onPress}
                   >
                     {link.name}
                   </MenuSlideItem>
@@ -46,6 +47,7 @@ SmallMenuRoutes.propTypes = {
     to: PropTypes.string.isRequired,
   }),
   clicked: PropTypes.bool.isRequired,
+  onPress: PropTypes.func.isRequired,
 };
 
 SmallMenuRoutes.defaultProps = {

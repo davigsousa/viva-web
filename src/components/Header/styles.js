@@ -21,7 +21,7 @@ export const Container = styled.header`
   }
 `;
 
-export const LogoSpace = styled(Link)`
+export const LogoSpace = styled.a`
   display: flex;
   height: 100%;
   align-items: center;
@@ -34,7 +34,7 @@ export const LogoSpace = styled(Link)`
   ${MEDIA} {
     margin: 0;
     position: absolute;
-    left: 37%;
+    left: 40%;
 
     img {
       max-width: 70px;

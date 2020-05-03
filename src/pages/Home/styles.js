@@ -108,10 +108,12 @@ export const AppInfo = styled.div`
 
 export const AppTitle = styled.p`
   font-size: 60px;
+  width: 400px;
   color: #ff6600;
 
   ${MEDIA} {
-    font-size: 30px;
+    width: 250px;
+    font-size: 20px;
   }
 `;
 
@@ -150,7 +152,7 @@ export const AboutGrid = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
   ${MEDIA} {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -182,14 +184,14 @@ export const Name = styled.p`
   color: #ff6600;
 
   ${MEDIA} {
-    font-size: 20px;
+    font-size: 16px;
   }
 `;
 
 export const PersonDescription = styled.p`
   ${MEDIA} {
     width: 70%;
-    font-size: 14px;
+    font-size: 9px;
   }
 `;
 
@@ -315,12 +317,11 @@ export const SubmitButton = styled.button`
 
 export const FooterContainer = styled.div`
   width: 100%;
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-export const FooterImage = styled.img`
-  width: 150px;
+export const FooterText = styled.p`
 `;

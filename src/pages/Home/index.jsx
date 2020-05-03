@@ -7,10 +7,9 @@ import {
   AboutTitle, PersonContainer, Name, Avatar, PersonDescription, ImageContainer,
   SloganContainer, SloganTitle, ContactContainer, FormContainer, FormTitle,
   FormDescription, Input, TextArea, ButtonContainer, SubmitButton,
-  FooterContainer, FooterImage,
+  FooterContainer, FooterText,
 } from './styles';
 
-import logo from '../../assets/logo.png';
 import vendaapp from '../../assets/vendaapp.jpg';
 import servico from '../../assets/servico.jpg';
 import catalogo from '../../assets/catalogo.jpg';
@@ -41,7 +40,7 @@ function Home() {
         <AppInfo>
           <AppTitle>
             VENDA
-            <br />
+            {' '}
             <strong>PELO APP</strong>
           </AppTitle>
           <AppDescription>
@@ -60,9 +59,9 @@ function Home() {
         </ImageContainer>
         <AppInfo>
           <AppTitle>
-            RAPIDEZ
-            <br />
-            <strong>NO SERVIÇO</strong>
+            RAPIDEZ NO
+            {' '}
+            <strong>SERVIÇO</strong>
           </AppTitle>
           <AppDescription>
             Ofereça um serviço mais rápido e eficiente,
@@ -75,7 +74,7 @@ function Home() {
         <AppInfo>
           <AppTitle>
             CRIE SEU
-            <br />
+            {' '}
             <strong>CATÁLOGO</strong>
           </AppTitle>
           <AppDescription>
@@ -151,7 +150,7 @@ function Home() {
       </ContactContainer>
 
       <FooterContainer>
-        <FooterImage src={logo} alt="VIVA" />
+        <FooterText>© 2020 Todos os direitos reservados | ViVa</FooterText>
       </FooterContainer>
     </Container>
   );

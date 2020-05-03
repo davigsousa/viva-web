@@ -36,7 +36,7 @@ function Header({
     <Container
       ref={containerElem}
     >
-      <LogoSpace ref={logoSpace} to="/">
+      <LogoSpace ref={logoSpace} href="/#inicio">
         { logo ? <img src={logo} alt="Logo" /> : ''}
         <Title>{title}</Title>
       </LogoSpace>

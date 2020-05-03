@@ -54,6 +54,7 @@ export const ActionButton = styled.a`
     padding: 10px 20px;
 
     img {
+      width: 20px;
       margin: 0;
     }
   }
