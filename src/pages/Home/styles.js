@@ -100,6 +100,7 @@ export const AppInfo = styled.div`
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  margin-right: 15px;
 
   ${MEDIA} {
     margin-top: 20px;
