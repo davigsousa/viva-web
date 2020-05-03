@@ -7,6 +7,10 @@ const MEDIA = '@media only screen and (max-width: 768px)';
 export const Container = styled.div`
   margin-top: 100px;
   width: 100%;
+
+  ${MEDIA} {
+    margin-top: 60px;
+  }
 `;
 
 export const VendaOnline = styled.div`

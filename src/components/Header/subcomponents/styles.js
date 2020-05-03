@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+
+const MEDIA = '@media only screen and (max-width: 768px)';
+
 export const MenuNormal = styled.menu`
   display: flex;
   height: 100%;
@@ -45,6 +48,15 @@ export const ActionButton = styled.a`
   &:hover {
     filter: brightness(70%);
   }
+
+  ${MEDIA} {
+    margin-right: 20px;
+    padding: 10px 20px;
+
+    img {
+      margin: 0;
+    }
+  }
 `;
 
 export const SmallMenu = styled.button`
@@ -53,6 +65,12 @@ export const SmallMenu = styled.button`
   width: 60px;
   margin-right: 25px;
   cursor: pointer;
+
+
+  ${MEDIA} {
+    position: absolute;
+    left: 20px;
+  }
 `;
 
 export const MenuBar = styled.div`
@@ -73,6 +91,9 @@ export const MenuSlide = styled.aside`
   align-items: center;
   background-color: #ff6600;
   border-top: solid 1vh #cc3300;
+  ${MEDIA} {
+    top: 60px;
+  }
 `;
 
 export const MenuSlideItem = styled.a`

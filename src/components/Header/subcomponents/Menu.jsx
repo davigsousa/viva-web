@@ -38,6 +38,11 @@ function Menu({
                 <MenuBar style={clicked ? bar2 : {}} />
                 <MenuBar style={clicked ? bar3 : {}} />
               </SmallMenu>
+              <ActionButton
+                href={actionButton.to}
+              >
+                <img src={download} alt="download" />
+              </ActionButton>
               <SmallMenuRoutes
                 links={links}
                 actionButton={actionButton}

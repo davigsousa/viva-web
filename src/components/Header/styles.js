@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+const MEDIA = '@media only screen and (max-width: 768px)';
+
 export const Container = styled.header`
   position: fixed;
   top: 0;
@@ -13,6 +15,10 @@ export const Container = styled.header`
   padding-left: 20px;
 
   background-color: white;
+
+  ${MEDIA} {
+    height: 60px;
+  }
 `;
 
 export const LogoSpace = styled(Link)`
@@ -23,6 +29,16 @@ export const LogoSpace = styled(Link)`
 
   img {
     max-width: 140px;
+  }
+
+  ${MEDIA} {
+    margin: 0;
+    position: absolute;
+    left: 37%;
+
+    img {
+      max-width: 70px;
+    }
   }
 `;
 
