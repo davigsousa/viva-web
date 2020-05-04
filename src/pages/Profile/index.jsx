@@ -57,6 +57,7 @@ function Profile() {
             <Select
               className="basic-single"
               classNamePrefix="select"
+              isSearchable={false}
               defaultValue={options[0]}
               name="category"
               options={options}

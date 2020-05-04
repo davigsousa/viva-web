@@ -5,9 +5,9 @@ import {
   Button, PriceLabel, Price,
 } from './styles';
 
-function BuyButton({ price, onPress }) {
+function BuyButton({ price }) {
   return (
-    <Button onPress={onPress}>
+    <Button>
       <PriceLabel>
         <Price>{`R$${price}`}</Price>
       </PriceLabel>
@@ -16,15 +16,11 @@ function BuyButton({ price, onPress }) {
 }
 
 BuyButton.propTypes = {
-  oldPrice: PropTypes.string,
   price: PropTypes.string,
-  onPress: PropTypes.func,
 };
 
 BuyButton.defaultProps = {
-  oldPrice: '',
   price: '',
-  onPress: undefined,
 };
 
 export default BuyButton;
