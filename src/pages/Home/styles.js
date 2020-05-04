@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import vendaonline from '../../assets/vendaonline.jpg';
 
-const MEDIA = '@media only screen and (max-width: 768px)';
+const MEDIA = '@media only screen and (max-width: 900px)';
 
 export const Container = styled.div`
   margin-top: 100px;
@@ -128,19 +128,21 @@ export const AppDescription = styled.p`
 
 export const AboutContainer = styled.div`
   width: 100%;
+  margin: 50px 0 100px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   ${MEDIA} {
+    margin: 0;
     margin-top: 100px;
   }
 `;
 
 export const AboutTitle = styled.h1`
   font-size: 90px;
-  color: #993366;
   margin: 30px 0 80px 0;
+  color: #993366;
 
   ${MEDIA} {
     font-size: 30px;
@@ -154,6 +156,17 @@ export const AboutGrid = styled.div`
 
   ${MEDIA} {
     grid-template-columns: 1fr 1fr;
+  }
+`;
+
+export const PlanImage = styled.img`
+  text-align: center;
+  width: 250px;
+  margin: 0 40px;
+
+  ${MEDIA} {
+    width: 80%;
+    margin: 20px auto;
   }
 `;
 

@@ -9,13 +9,17 @@ import {
   AboutTitle, PersonContainer, Name, Avatar, PersonDescription, ImageContainer,
   SloganContainer, SloganTitle, ContactContainer, FormContainer, FormTitle,
   FormDescription, Input, TextArea, ButtonContainer, SubmitButton,
-  FooterContainer, FooterText,
+  FooterContainer, FooterText, PlanImage,
 } from './styles';
 
 import logo from '../../assets/logo.png';
 import vendaapp from '../../assets/vendaapp.jpg';
 import servico from '../../assets/servico.jpg';
 import catalogo from '../../assets/catalogo.jpg';
+import mensal from '../../assets/mensal.png';
+import trimestral from '../../assets/trimestral.png';
+import semestral from '../../assets/semestral.png';
+import anual from '../../assets/anual.png';
 import arthur from '../../assets/arthur.png';
 import davi from '../../assets/davi.png';
 import henrique from '../../assets/henrique.png';
@@ -60,6 +64,7 @@ function Home() {
         logo={logo}
         links={[
           { name: 'Início', to: '/#inicio' },
+          { name: 'Planos', to: '/#planos' },
           { name: 'Quem Somos?', to: '/#sobre' },
           { name: 'Contato', to: '/#contato' },
         ]}
@@ -130,8 +135,20 @@ function Home() {
         </VendaApp>
 
         <AboutContainer>
+          <ScrollableAnchor id="planos">
+            <AboutTitle colorText="#ff6600">Nossos Planos</AboutTitle>
+          </ScrollableAnchor>
+          <AboutGrid>
+            <PlanImage src={mensal} alt="mensal" />
+            <PlanImage src={trimestral} alt="trimestral" />
+            <PlanImage src={semestral} alt="semestral" />
+            <PlanImage src={anual} alt="anual" />
+          </AboutGrid>
+        </AboutContainer>
+
+        <AboutContainer>
           <ScrollableAnchor id="sobre">
-            <AboutTitle>Quem Somos?</AboutTitle>
+            <AboutTitle colorText="#A8518A">Quem Somos?</AboutTitle>
           </ScrollableAnchor>
           <AboutGrid>
             <PersonContainer>
