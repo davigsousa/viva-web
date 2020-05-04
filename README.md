@@ -6,6 +6,15 @@ In the project directory, you can run:
 
 ### `yarn start`
 
+            {
+              products.map((item) => (
+                <ProductContainer key={Math.random()}>
+                  <ProductImage src={item.image} alt={item.description} />
+                  <BuyButton price={item.price} />
+                </ProductContainer>
+              ))
+            }
+
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 

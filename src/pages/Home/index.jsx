@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
+import Header from '../../components/Header';
+
 import {
   Container, VendaOnline, VendaTitle, VendaContainer, VendaDescription,
   VendaApp, AppInfo, AppTitle, AppDescription, AboutContainer, AboutGrid,
@@ -10,6 +12,7 @@ import {
   FooterContainer, FooterText,
 } from './styles';
 
+import logo from '../../assets/logo.png';
 import vendaapp from '../../assets/vendaapp.jpg';
 import servico from '../../assets/servico.jpg';
 import catalogo from '../../assets/catalogo.jpg';
@@ -52,152 +55,163 @@ function Home() {
   };
 
   return (
-    <Container>
-      <VendaOnline>
-        <VendaContainer>
-          <ScrollableAnchor id="inicio">
-            <VendaTitle>Venda Online Já!</VendaTitle>
+    <>
+      <Header
+        logo={logo}
+        links={[
+          { name: 'Início', to: '/#inicio' },
+          { name: 'Quem Somos?', to: '/#sobre' },
+          { name: 'Contato', to: '/#contato' },
+        ]}
+        actionButton={{ name: 'Download', to: '/#' }}
+      />
+      <Container>
+        <VendaOnline>
+          <VendaContainer>
+            <ScrollableAnchor id="inicio">
+              <VendaTitle>Venda Online Já!</VendaTitle>
+            </ScrollableAnchor>
+            <VendaDescription>
+              Baixe nosso APP e adquira algum
+              pacote de serviços. Simples, prático e rápido.
+            </VendaDescription>
+          </VendaContainer>
+        </VendaOnline>
+
+        <VendaApp>
+          <AppInfo>
+            <AppTitle>
+              VENDA
+              {' '}
+              <strong>PELO APP</strong>
+            </AppTitle>
+            <AppDescription>
+              Faça postagens de produtos, organize seu perfil, tenha contato
+              com clientes e aumente suas vendas.
+            </AppDescription>
+          </AppInfo>
+          <ImageContainer>
+            <img src={vendaapp} alt="Aplicativo" />
+          </ImageContainer>
+        </VendaApp>
+
+        <VendaApp>
+          <ImageContainer>
+            <img src={servico} alt="Serviço" />
+          </ImageContainer>
+          <AppInfo>
+            <AppTitle>
+              RAPIDEZ NO
+              {' '}
+              <strong>SERVIÇO</strong>
+            </AppTitle>
+            <AppDescription>
+              Ofereça um serviço mais rápido e eficiente,
+              dando a atenção que o seu cliente merece.
+            </AppDescription>
+          </AppInfo>
+        </VendaApp>
+
+        <VendaApp>
+          <AppInfo>
+            <AppTitle>
+              CRIE SEU
+              {' '}
+              <strong>CATÁLOGO</strong>
+            </AppTitle>
+            <AppDescription>
+              Crie um catálogo para expor seus produtos aos clientes
+              através de um site.
+            </AppDescription>
+          </AppInfo>
+          <ImageContainer>
+            <img src={catalogo} alt="Aplicativo" />
+          </ImageContainer>
+        </VendaApp>
+
+        <AboutContainer>
+          <ScrollableAnchor id="sobre">
+            <AboutTitle>Quem Somos?</AboutTitle>
           </ScrollableAnchor>
-          <VendaDescription>
-            Baixe nosso APP e adquira algum
-            pacote de serviços. Simples, prático e rápido.
-          </VendaDescription>
-        </VendaContainer>
-      </VendaOnline>
+          <AboutGrid>
+            <PersonContainer>
+              <Avatar src={arthur} alt="Integrante" />
+              <Name>Arthur Stevam</Name>
+              <PersonDescription>
+                Desenvolvedor Backend e estudante de Ciência da Computação
+                na Universidade Federal de Campina Grande
+              </PersonDescription>
+            </PersonContainer>
 
-      <VendaApp>
-        <AppInfo>
-          <AppTitle>
-            VENDA
-            {' '}
-            <strong>PELO APP</strong>
-          </AppTitle>
-          <AppDescription>
-            Faça postagens de produtos, organize seu perfil, tenha contato
-            com clientes e aumente suas vendas.
-          </AppDescription>
-        </AppInfo>
-        <ImageContainer>
-          <img src={vendaapp} alt="Aplicativo" />
-        </ImageContainer>
-      </VendaApp>
+            <PersonContainer>
+              <Avatar src={davi} alt="Integrante" />
+              <Name>Davi Sousa</Name>
+              <PersonDescription>
+                Desenvolvedor Frontend e estudante de Ciência da Computação
+                na Universidade Federal de Campina Grande
+              </PersonDescription>
+            </PersonContainer>
 
-      <VendaApp>
-        <ImageContainer>
-          <img src={servico} alt="Serviço" />
-        </ImageContainer>
-        <AppInfo>
-          <AppTitle>
-            RAPIDEZ NO
-            {' '}
-            <strong>SERVIÇO</strong>
-          </AppTitle>
-          <AppDescription>
-            Ofereça um serviço mais rápido e eficiente,
-            dando a atenção que o seu cliente merece.
-          </AppDescription>
-        </AppInfo>
-      </VendaApp>
+            <PersonContainer>
+              <Avatar src={henrique} alt="Integrante" />
+              <Name>Henrique Lima</Name>
+              <PersonDescription>
+                Business focado em Relações Pessoais, estudante de Relações
+                Internacionas na Universidade Jaguelônica de Krakow na Polônia
+              </PersonDescription>
+            </PersonContainer>
 
-      <VendaApp>
-        <AppInfo>
-          <AppTitle>
-            CRIE SEU
-            {' '}
-            <strong>CATÁLOGO</strong>
-          </AppTitle>
-          <AppDescription>
-            Crie um catálogo para expor seus produtos aos clientes
-            através de um site.
-          </AppDescription>
-        </AppInfo>
-        <ImageContainer>
-          <img src={catalogo} alt="Aplicativo" />
-        </ImageContainer>
-      </VendaApp>
+            <PersonContainer>
+              <Avatar src={matheus} alt="Integrante" />
+              <Name>Matheus Gonzaga</Name>
+              <PersonDescription>
+                Business, Designer, Empreendedor e estudante de Administração na
+                Universidade Federal de Campina Grande.
+              </PersonDescription>
+            </PersonContainer>
+          </AboutGrid>
+        </AboutContainer>
 
-      <AboutContainer>
-        <ScrollableAnchor id="sobre">
-          <AboutTitle>Quem Somos?</AboutTitle>
-        </ScrollableAnchor>
-        <AboutGrid>
-          <PersonContainer>
-            <Avatar src={arthur} alt="Integrante" />
-            <Name>Arthur Stevam</Name>
-            <PersonDescription>
-              Desenvolvedor Backend e estudante de Ciência da Computação
-              na Universidade Federal de Campina Grande
-            </PersonDescription>
-          </PersonContainer>
+        <SloganContainer>
+          <SloganTitle>Somos a VIVA, sua Vitrine do Varejo!</SloganTitle>
+        </SloganContainer>
 
-          <PersonContainer>
-            <Avatar src={davi} alt="Integrante" />
-            <Name>Davi Sousa</Name>
-            <PersonDescription>
-              Desenvolvedor Frontend e estudante de Ciência da Computação
-              na Universidade Federal de Campina Grande
-            </PersonDescription>
-          </PersonContainer>
+        <ContactContainer>
+          <FormContainer>
+            <ScrollableAnchor id="contato">
+              <FormTitle>Contate-nos</FormTitle>
+            </ScrollableAnchor>
+            <FormDescription>Envie-nos um Email e retornaremos contato</FormDescription>
+            <Input
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              type="email"
+              required
+            />
+            <Input
+              placeholder="Assunto"
+              onChange={(e) => setSubject(e.target.value)}
+              value={subject}
+              required
+            />
+            <TextArea
+              placeholder="Digite sua mensagem aqui..."
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
+              required
+            />
+            <ButtonContainer>
+              <SubmitButton type="button" onClick={handleSubmit}>Enviar</SubmitButton>
+            </ButtonContainer>
+          </FormContainer>
+        </ContactContainer>
 
-          <PersonContainer>
-            <Avatar src={henrique} alt="Integrante" />
-            <Name>Henrique Lima</Name>
-            <PersonDescription>
-              Business focado em Relações Pessoais, estudante de Relações
-              Internacionas na Universidade Jaguelônica de Krakow na Polônia
-            </PersonDescription>
-          </PersonContainer>
-
-          <PersonContainer>
-            <Avatar src={matheus} alt="Integrante" />
-            <Name>Matheus Gonzaga</Name>
-            <PersonDescription>
-              Business, Designer, Empreendedor e estudante de Administração na
-              Universidade Federal de Campina Grande.
-            </PersonDescription>
-          </PersonContainer>
-        </AboutGrid>
-      </AboutContainer>
-
-      <SloganContainer>
-        <SloganTitle>Somos a VIVA, sua Vitrine do Varejo!</SloganTitle>
-      </SloganContainer>
-
-      <ContactContainer>
-        <FormContainer>
-          <ScrollableAnchor id="contato">
-            <FormTitle>Contate-nos</FormTitle>
-          </ScrollableAnchor>
-          <FormDescription>Envie-nos um Email e retornaremos contato</FormDescription>
-          <Input
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-            type="email"
-            required
-          />
-          <Input
-            placeholder="Assunto"
-            onChange={(e) => setSubject(e.target.value)}
-            value={subject}
-            required
-          />
-          <TextArea
-            placeholder="Digite sua mensagem aqui..."
-            onChange={(e) => setMessage(e.target.value)}
-            value={message}
-            required
-          />
-          <ButtonContainer>
-            <SubmitButton type="button" onClick={handleSubmit}>Enviar</SubmitButton>
-          </ButtonContainer>
-        </FormContainer>
-      </ContactContainer>
-
-      <FooterContainer>
-        <FooterText>© 2020 Todos os direitos reservados | ViVa</FooterText>
-      </FooterContainer>
-    </Container>
+        <FooterContainer>
+          <FooterText>© 2020 Todos os direitos reservados | ViVa</FooterText>
+        </FooterContainer>
+      </Container>
+    </>
   );
 }
 
