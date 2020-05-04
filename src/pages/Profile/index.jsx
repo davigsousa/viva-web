@@ -10,7 +10,7 @@ import {
   HeaderContainer, Logo, Container, InfoWrapper, ProfileWrapper, ProfileContainer,
   DetailsContainer, Avatar, Name, Username, Description, CategoryWrapper, CategoryLabel,
   ProductsWrapper, ProductsContainer, ProductContainer, ProductImage, ProductDescription,
-  FooterContainer, FooterText, AdContainer, AdTitle, AdDescription, ActionButton,
+  FooterContainer, FooterText, AdContainer, AdTitle, AdDescription, ActionButton, HomeLink,
 } from './styles';
 
 import products from './products';
@@ -35,7 +35,9 @@ function Profile() {
   return (
     <>
       <HeaderContainer>
-        <Logo src={logo} alt="VIVA" />
+        <HomeLink to="/">
+          <Logo src={logo} alt="VIVA" />
+        </HomeLink>
       </HeaderContainer>
       <Container>
         <InfoWrapper>

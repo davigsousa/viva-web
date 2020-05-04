@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+
+const MEDIA = '';
 
 export const HeaderContainer = styled.div`
   position: fixed;
@@ -11,6 +15,10 @@ export const HeaderContainer = styled.div`
   justify-content: center;
   border-bottom: solid 1px #ddd;
   height: 100px;
+`;
+
+export const HomeLink = styled(Link)`
+  text-decoration: none;
 `;
 
 export const Logo = styled.img`

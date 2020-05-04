@@ -11,7 +11,7 @@ export default [
   },
   {
     image: 'https://static.dooca.com.br/finoraro/product/sapato-feminino-fechado-dina-mirtz-15543172439602.jpg',
-    price: '1999.99',
+    price: '99.99',
     description: 'O destaque que você precisava!',
   },
   {
