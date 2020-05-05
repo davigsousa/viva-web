@@ -24,7 +24,7 @@ const LOJA = {
 };
 
 function Profile() {
-  const { } = useParams();
+  const { perfil } = useParams();
 
   const [posts, setPosts] = useState([]);
   const [options, setOptions] = useState([
@@ -45,7 +45,7 @@ function Profile() {
 
   useEffect(() => {
     (async () => {
-      const { data: storeData } = await api.get(`/products/${store.username}/all`);
+      const { data: storeData } = await api.get(`/products/${perfil}/all`);
       const { store: newStore } = storeData;
       setStore(newStore);
     })();
