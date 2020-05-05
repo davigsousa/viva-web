@@ -73,8 +73,8 @@ export const ProfileContainer = styled.div`
 `;
 
 export const Avatar = styled.img`
-  width: 300px;
-  height: 300px;
+  width: 260px;
+  height: 260px;
   border-radius: 150px;
 `;
 

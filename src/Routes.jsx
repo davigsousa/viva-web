@@ -5,6 +5,7 @@ import {
 
 import App from './App';
 import Home from './pages/Home';
+import Profile from './pages/Profile';
 
 
 const Routes = () => (
@@ -12,6 +13,7 @@ const Routes = () => (
     <App>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route path="/:perfil" component={Profile} />
       </Switch>
     </App>
   </BrowserRouter>

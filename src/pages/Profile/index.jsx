@@ -16,29 +16,18 @@ import {
 
 import api from '../../services/api';
 
-const LOJA = {
-  name: 'Lojas Maia',
-  username: 'lojasmaia',
-  description: 'Uma loja especial para você!',
-  image: 'https://img.elo7.com.br/product/main/2261CBD/logo-semi-pronta-logotipo-logo-loja.jpg',
-};
 
 function Profile() {
   const { perfil } = useParams();
 
+  const [store, setStore] = useState({});
   const [posts, setPosts] = useState([]);
-  const [options, setOptions] = useState([
-    { value: 'all', label: 'Todos os Produtos' },
-    { value: 'Sapatos', label: 'Sapatos' },
-    { value: 'Camisas', label: 'Camisas' },
-    { value: 'Relógios', label: 'Relógios' },
-    { value: 'Calças', label: 'Calças' },
-  ]);
+  const [options, setOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState('');
 
   const fetchNewPosts = async (category) => {
     category = !category ? 'all' : category;
-    const { data } = await api.get(`/products/${store.username}/${category}`);
+    const { data } = await api.get(`/products/${perfil}/${category}`);
     const { products } = data;
     setPosts(products);
   };
@@ -48,12 +37,14 @@ function Profile() {
       const { data: storeData } = await api.get(`/products/${perfil}/all`);
       const { store: newStore } = storeData;
       setStore(newStore);
+      console.log('uri', newStore.url_image);
     })();
 
     fetchNewPosts();
+
     (async () => {
-      const { data } = await api.get(`/categories/${store.username}`);
-      setOptions(data);
+      const { data } = await api.get(`/categories/${perfil}`);
+      setOptions(data.map((item) => ({ value: item, label: item })));
     })();
   }, []);
 
@@ -68,11 +59,11 @@ function Profile() {
         <InfoWrapper>
           <ProfileWrapper>
             <ProfileContainer>
-              <Avatar src={LOJA.image} alt={LOJA.username} />
+              <Avatar src={store.url_image} alt={store.username} />
               <DetailsContainer>
-                <Name>{LOJA.name}</Name>
-                <Username>{LOJA.username}</Username>
-                <Description>{LOJA.description}</Description>
+                <Name>{store.name}</Name>
+                <Username>{store.username}</Username>
+                <Description>{store.description}</Description>
               </DetailsContainer>
             </ProfileContainer>
           </ProfileWrapper>
@@ -85,7 +76,7 @@ function Profile() {
               isSearchable={false}
               defaultValue={options[0]}
               name="category"
-              options={options}
+              options={[{ label: 'Todos os Produtos', value: '' }, ...options]}
               onChange={(item) => setSelectedOption(item.value)}
             />
           </CategoryWrapper>
@@ -94,10 +85,10 @@ function Profile() {
         <ProductsWrapper>
           <ProductsContainer>
             {
-              products.map((item) => (
+              posts.map((item) => (
                 <ProductContainer key={Math.random()}>
-                  <ProductImage src={item.image} alt={item.description} />
-                  <BuyButton price={item.price} />
+                  <ProductImage src={item.url_image} alt={item.description} />
+                  <BuyButton price={String(item.price).replace('.', ',')} />
                   <ProductDescription>{item.description}</ProductDescription>
                 </ProductContainer>
               ))
