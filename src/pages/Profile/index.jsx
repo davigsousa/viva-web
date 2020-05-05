@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Select from 'react-select';
 
 import logo from '../../assets/logo.png';
@@ -13,7 +14,7 @@ import {
   FooterContainer, FooterText, AdContainer, AdTitle, AdDescription, ActionButton, HomeLink,
 } from './styles';
 
-import products from './products';
+import api from '../../services/api';
 
 const LOJA = {
   name: 'Lojas Maia',
@@ -23,6 +24,9 @@ const LOJA = {
 };
 
 function Profile() {
+  const { } = useParams();
+
+  const [posts, setPosts] = useState([]);
   const [options, setOptions] = useState([
     { value: 'all', label: 'Todos os Produtos' },
     { value: 'Sapatos', label: 'Sapatos' },
@@ -31,6 +35,27 @@ function Profile() {
     { value: 'Calças', label: 'Calças' },
   ]);
   const [selectedOption, setSelectedOption] = useState('');
+
+  const fetchNewPosts = async (category) => {
+    category = !category ? 'all' : category;
+    const { data } = await api.get(`/products/${store.username}/${category}`);
+    const { products } = data;
+    setPosts(products);
+  };
+
+  useEffect(() => {
+    (async () => {
+      const { data: storeData } = await api.get(`/products/${store.username}/all`);
+      const { store: newStore } = storeData;
+      setStore(newStore);
+    })();
+
+    fetchNewPosts();
+    (async () => {
+      const { data } = await api.get(`/categories/${store.username}`);
+      setOptions(data);
+    })();
+  }, []);
 
   return (
     <>
