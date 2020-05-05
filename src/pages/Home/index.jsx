@@ -68,7 +68,7 @@ function Home() {
           { name: 'Quem Somos?', to: '/#sobre' },
           { name: 'Contato', to: '/#contato' },
         ]}
-        actionButton={{ name: 'Download', to: '/#' }}
+        actionButton={{ name: 'Download', to: 'https://drive.google.com/file/d/1oWM61o8oy_1KsgNthBezh3c4O1l-h1II/view?usp=sharing' }}
       />
       <Container>
         <VendaOnline>

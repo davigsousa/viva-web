@@ -35,6 +35,7 @@ function Menu({
                 <MenuBar style={clicked ? bar3 : {}} />
               </SmallMenu>
               <ActionButton
+                target="_blank"
                 href={actionButton.to}
               >
                 <img src={download} alt="download" />
@@ -63,6 +64,7 @@ function Menu({
                 actionButton
                   ? (
                     <ActionButton
+                      target="_blank"
                       href={actionButton.to}
                     >
                       {actionButton.name}

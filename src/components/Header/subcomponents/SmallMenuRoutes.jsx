@@ -26,6 +26,7 @@ const SmallMenuRoutes = ({
               }
               { actionButton && (
                 <MenuSlideItem
+                  target="_blank"
                   href={actionButton.to}
                 >
                   {actionButton.name}
